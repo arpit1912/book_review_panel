@@ -1,0 +1,9 @@
+ database: postgres
+
+ back-end modules:
+ flask
+ requests
+ sqlalchemy
+ 
+ front-end web-framworks used:
+ HTML,CSS,Bootstrap,jinja2
