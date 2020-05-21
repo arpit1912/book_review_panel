@@ -95,9 +95,3 @@ def submit(user_id,isbn):
 app.run(debug = True)
 
 
-
-""
-key: gt77o8xriOCaqk0SrGcA
-secret: OQgEj9Wo8CBEh426xASAfGqt4XnxXGPfGxQZlPM
-
-""
