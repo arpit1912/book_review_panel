@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}
+	Users_login
+{% endblock %}
+
+{% block body %}
+<div class="panel panel-default">
+        <div class="panel-body"  style="background-color:#67C6D4;">
+     
+<h1> Please fill in book details which you are searching for {{name}}</h1>
+<form action="{{ url_for('search',user_id=name) }}" method="post">
+        <div class="form-group">
+            
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="isbn" placeholder="ISBN number">
+            <input class="form-control" name="author" placeholder="Author">
+            <input class="form-control" name="title" placeholder="Title of the book">
+
+            <button class="btn btn-primary">search..</button>
+        </div>
+
+        
+</form>
+</div>
+</div>
+{% if run_it %}
+	{% if book_found %}
+	<h3>Available books with given Specifications</h3>
+	<ul>
+		{% for book in books %}
+		<li> <a href="{{url_for('book',user_id=name,isbn=book.isbn)}}">
+					Book isbn: {{book.isbn}} Book title: {{book.title}} Book author: {{book.author}}
+					 </a></li>
+					
+		 {% endfor %}
+	</ul>
+	{% else %}
+	<h3 style="color: red"> No book found! </h3>
+	{%endif%}
+{% endif %}
+<a href="{{url_for('index')}}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>                 
+{% endblock %}
